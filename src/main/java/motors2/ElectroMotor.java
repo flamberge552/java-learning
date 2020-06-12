@@ -1,4 +1,4 @@
-package motors2.machine;
+package motors2;
 
 
 public class ElectroMotor extends Machine {

@@ -7,12 +7,12 @@ abstract class Machine {
     abstract void startEngine();
 
     void fuelUp(int value) {
-        if (value > fuelCapacity) {
+        if (value + currentFuel > fuelCapacity) {
             throw new RuntimeException("Warning! Amount of fuel to be added exceeds capacity. Got " + value + ", " +
                     "while maximum is " + fuelCapacity);
         }
 
-        currentFuel = value;
+        currentFuel += value;
     }
 }
 
@@ -32,13 +32,13 @@ public class Main {
         System.out.println("capacity = " + motor.fuelCapacity);
         System.out.println("current = " + motor.currentFuel);
 
-//        try {
-//            motor.fuelUp(520);
-//        } catch (RuntimeException e) {
-//            e.printStackTrace();
-//        } finally {
+        try {
+            motor.fuelUp(250);
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } finally {
             motor.increaseCapacity();
-//        }
+        }
 
         motor.fuelUp(520);
 

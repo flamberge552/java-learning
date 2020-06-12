@@ -1,4 +1,4 @@
-package motors2.machine;
+package motors2;
 
 public interface IMachine {
     int machineCycles = 5;

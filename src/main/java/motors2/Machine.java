@@ -1,6 +1,4 @@
-package motors2.machine;
-
-import motors2.machine.IMachine;
+package motors2;
 
 public abstract class Machine implements IMachine {
     protected String machineType = "Motor";

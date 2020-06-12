@@ -31,6 +31,7 @@ public class Main {
         Pupper pupper = new Pupper(2);
         Mammal animal;
         animal = (Mammal) pupper;
+
         System.out.println(pupper.size);
         System.out.println(animal.size);
     }

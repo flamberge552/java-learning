@@ -23,11 +23,23 @@ public class ChallengeFour {
         return hashText;
     }
 
+    String convertStringToHex(String input) {
+        StringBuffer hex = new StringBuffer();
+
+        for (char el : input.toCharArray()) {
+            hex.append((int) el);
+        }
+        return hex.toString();
+    }
+
     boolean isValidHash(String hashValue) {
-        return hashValue.startsWith("00000");
+        return convertStringToHex(hashValue).startsWith("00000");
     }
 
     public static void main(String... args) {
+        String myKey = "abcdef609043";
         ChallengeFour chall = new ChallengeFour();
+        System.out.println(chall.convertStringToHex(chall.getMD5HashValue(myKey)));
+
     }
 }
